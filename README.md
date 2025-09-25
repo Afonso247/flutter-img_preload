@@ -1,4 +1,4 @@
-# SERVIÇO — `img_preload.dart`
+# Serviço — `img_preload.dart`
 
 O img_preloader é um serviço de pré-renderização (precache) de imagens de assets no Flutter, reduzindo flicker/lag quando as imagens são exibidas pela primeira vez. O arquivo vem com cache interno, callbacks de progresso, com versão sequencial e paralela, e um ImagePreloaderWidget que exibe um loading enquanto as imagens são carregadas.
 
@@ -116,7 +116,7 @@ class _MeuArquivoState extends State<MeuArquivo> {
 
 ## Regras e Dicas para pré-renderização **efetiva**
 
-* Use **sequencial** (`preloadImages`) em dispositivos com pouca memória; use **paralelo** para velocidade em dispositivos modernos.
+* Use **sequencial** (`preloadImages`) em dispositivos com pouca memória; use **paralelo** (`preloadImagesParallel`) para velocidade em dispositivos modernos.
 * **Não** pré-carregue todas as de imagens de uma vez no projeto — prefira renderizar aquilo que irá aparecer agora para o usuário (landing page → home → galeria sob demanda).
 * Mostre progresso (callback `onProgress`) para UX melhor em telas que travam.
 * TODO: Para **imagens remotas (NetworkImage)**: o arquivo usa `AssetImage` por padrão — adapte para `precacheImage(NetworkImage(url), context)` ou altere o preloader para suportar `NetworkImage`.
